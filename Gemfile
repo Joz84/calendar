@@ -17,6 +17,10 @@
   gem 'uglifier'
   gem 'webpacker'
   gem 'slim'
+  gem 'google-api-client', '~> 0.8'
+  gem 'fullcalendar-rails'
+  gem 'momentjs-rails'
+
 
   group :development do
     gem 'rails-erd'

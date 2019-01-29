@@ -1,0 +1,42 @@
+<h1>Events</h1>
+
+<div class="container">
+  <div class="row">
+    <% @events.each do |event| %>
+      <div class="col-12">
+        <div class="card">
+          <h2><%= event.summary %></h2>
+          <p><%= event.start.date || event.start.date_time %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div id="calendar"></div>
+</div>
+
+<%= content_for :after_js do %>
+  <script>
+    $('#calendar').fullCalendar({
+    defaultView: 'agendaDay',
+    header: {
+      center: 'month,agendaWeek'
+    },
+    resources: [
+      { id: 'a', title: 'Test A'},
+      { id: 'b', title: 'Test B'}
+    ],
+    events: [
+      { title: '<%= @events.first&.summary %>',
+        allDay: false,
+        start: '<%= @events.first&.start&.date || @events.first&.start&.date_time %>',
+        end: '<%= @events.first&.end&.date || @events.first&.end&.date_time %>',
+        resourceId: "a",
+        eventResourceEditable: true
+      }
+    ]
+  });
+  </script>
+<% end %>

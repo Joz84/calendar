@@ -2,7 +2,14 @@
   Yourdomain - Accueil
 <% end %>
 
-<div class="container page-min-height">
-  <h1>Pages#Home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
+<div class="container page-min-height text-center">
+  <h1>Google Agenda</h1>
+  <div>
+    <%= link_to "Modifier les dates", "https://calendar.google.com/calendar/r/month/2018/12/1", class: "btn btn-danger", target: "_blank" %>
+  </div>
+
+  <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=03v3jem57rb6jqdvg593s65gv4%40group.calendar.google.com&amp;color=%23691426&amp;ctz=Europe%2FParis" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+
+
 </div>
